@@ -11,16 +11,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #define TIMEOUT 300
-&led_strip {
-    status = "okay";
-    chain-length = <23>;
 
-    gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
-
-    color-mapping = <LED_COLOR_ID_GREEN
-                     LED_COLOR_ID_RED
-                     LED_COLOR_ID_BLUE>;
-};
 &middle_left_encoder {
     status = "okay";
 };
