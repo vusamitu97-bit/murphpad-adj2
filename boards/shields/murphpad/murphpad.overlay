@@ -9,24 +9,21 @@
 #include "murphpad-layout.dtsi"
 / {
     chosen {
-        zmk,underglow = &led_strip;
+        zmk,underglow = &underglow;
     };
-};
 
-&spi3 {
-    status = "okay";
-};
+    underglow: underglow {
+        compatible = "zmk,underglow";
+        status = "okay";
 
-&led_strip {
-    status = "okay";
+        chain-length = <23>;
 
-    chain-length = <23>;
+        color-mapping = <LED_COLOR_ID_GREEN
+                         LED_COLOR_ID_RED
+                         LED_COLOR_ID_BLUE>;
 
-    out-pin = <0>;
-
-    color-mapping = <LED_COLOR_ID_GREEN
-                     LED_COLOR_ID_RED
-                     LED_COLOR_ID_BLUE>;
+        gpios = <&gpio0 2 GPIO_ACTIVE_HIGH>;
+    };
 };
 / {
     chosen {
