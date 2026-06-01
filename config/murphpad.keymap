@@ -11,7 +11,9 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #define TIMEOUT 300
-
+&led_strip {
+    chain-length = <0>;
+};
 &middle_left_encoder {
     status = "okay";
 };
