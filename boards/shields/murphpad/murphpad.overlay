@@ -7,7 +7,27 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 
 #include "murphpad-layout.dtsi"
+/ {
+    chosen {
+        zmk,underglow = &led_strip;
+    };
+};
 
+&spi3 {
+    status = "okay";
+};
+
+&led_strip {
+    status = "okay";
+
+    chain-length = <23>;
+
+    out-pin = <0>;
+
+    color-mapping = <LED_COLOR_ID_GREEN
+                     LED_COLOR_ID_RED
+                     LED_COLOR_ID_BLUE>;
+};
 / {
     chosen {
         zephyr,display = &oled;
